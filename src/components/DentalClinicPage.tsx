@@ -60,36 +60,36 @@ export default function DentalClinicPage() {
   const currentTestimonial = CLINIC_CONFIG.testimonials[currentTestimonialIndex];
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-teal-600 selection:text-white">
+    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-teal-600 selection:text-white w-full max-w-full overflow-x-clip">
       {/* ============================================================ */}
-      {/* HEADER: Exactly matching the original site */}
+      {/* HEADER: Fully responsive matching luxury clinical aesthetic */}
       {/* ============================================================ */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <div className="relative">
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div className="relative w-full">
           <div className="absolute inset-x-0 bottom-0 h-[3px] bg-teal-500/80"></div>
 
-          <div className="page-width h-20 flex items-center justify-between">
+          <div className="page-width h-20 flex items-center justify-between gap-4">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group" aria-label="Go to homepage">
+            <a href="#" className="flex items-center gap-3 group shrink-0" aria-label="Go to homepage">
               <div className="size-8 overflow-hidden rounded-full bg-gradient-to-br from-teal-500 to-teal-700 shadow-md flex items-center justify-center text-white">
                 <Sparkles className="size-4" />
               </div>
-              <span className="text-[18px] tracking-[0.22em] uppercase text-slate-700 group-hover:text-slate-900 transition-colors font-medium">
+              <span className="text-[17px] sm:text-[18px] tracking-[0.22em] uppercase text-slate-700 group-hover:text-slate-900 transition-colors font-medium">
                 Aura
               </span>
             </a>
 
-            {/* Main Navigation */}
-            <nav aria-label="Main" className="hidden lg:flex items-center gap-10 xl:gap-12">
+            {/* Main Desktop Navigation (xl+ to guarantee spacious luxury editorial spacing) */}
+            <nav aria-label="Main" className="hidden xl:flex items-center gap-7 2xl:gap-9">
               <a
                 href="#"
-                className="flex items-center gap-2 text-[13px] tracking-[0.22em] uppercase text-slate-700 hover:text-slate-900 transition-colors"
+                className="flex items-center gap-2 text-[12px] 2xl:text-[13px] tracking-[0.2em] uppercase text-slate-700 hover:text-teal-700 transition-colors"
               >
                 <span>Home</span>
               </a>
               <a
                 href="#about"
-                className="flex items-center gap-2 text-[13px] tracking-[0.22em] uppercase text-slate-700 hover:text-slate-900 transition-colors"
+                className="flex items-center gap-2 text-[12px] 2xl:text-[13px] tracking-[0.2em] uppercase text-slate-700 hover:text-teal-700 transition-colors"
               >
                 <span>About Us</span>
               </a>
@@ -103,7 +103,8 @@ export default function DentalClinicPage() {
                 <button
                   type="button"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                  className="flex items-center gap-1 text-[13px] tracking-[0.22em] uppercase text-slate-700 hover:text-slate-900 transition-colors py-2"
+                  className="flex items-center gap-1 text-[12px] 2xl:text-[13px] tracking-[0.2em] uppercase text-slate-700 hover:text-teal-700 transition-colors py-2"
+                  aria-expanded={servicesDropdownOpen}
                 >
                   <span>Services</span>
                   <ChevronDown
@@ -142,94 +143,115 @@ export default function DentalClinicPage() {
 
               <a
                 href="#technology"
-                className="flex items-center gap-2 text-[13px] tracking-[0.22em] uppercase text-slate-700 hover:text-slate-900 transition-colors"
+                className="flex items-center gap-2 text-[12px] 2xl:text-[13px] tracking-[0.2em] uppercase text-slate-700 hover:text-teal-700 transition-colors"
               >
                 <span>Digital Dentistry</span>
               </a>
               <a
                 href="#compare"
-                className="flex items-center gap-2 text-[13px] tracking-[0.22em] uppercase text-slate-700 hover:text-slate-900 transition-colors"
+                className="flex items-center gap-2 text-[12px] 2xl:text-[13px] tracking-[0.2em] uppercase text-slate-700 hover:text-teal-700 transition-colors"
               >
                 <span>Gallery</span>
               </a>
               <a
                 href="#testimonials"
-                className="flex items-center gap-2 text-[13px] tracking-[0.22em] uppercase text-slate-700 hover:text-slate-900 transition-colors"
+                className="flex items-center gap-2 text-[12px] 2xl:text-[13px] tracking-[0.2em] uppercase text-slate-700 hover:text-teal-700 transition-colors"
               >
                 <span>Reviews</span>
               </a>
               <a
                 href="#contact"
-                className="flex items-center gap-2 text-[13px] tracking-[0.22em] uppercase text-slate-700 hover:text-slate-900 transition-colors"
+                className="flex items-center gap-2 text-[12px] 2xl:text-[13px] tracking-[0.2em] uppercase text-slate-700 hover:text-teal-700 transition-colors"
               >
                 <span>Contact Us</span>
               </a>
             </nav>
 
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden block">
+            {/* Desktop Action Button */}
+            <div className="hidden xl:flex items-center gap-3 shrink-0">
+              <a
+                href="#appointment"
+                className="px-5 py-2.5 border-2 border-slate-900 text-slate-900 text-xs uppercase tracking-wider font-semibold hover:bg-slate-900 hover:text-white transition-colors duration-200"
+              >
+                Book Appointment
+              </a>
+            </div>
+
+            {/* Mobile & Tablet Controls */}
+            <div className="xl:hidden flex items-center gap-2 sm:gap-3">
+              <a
+                href="#appointment"
+                className="hidden sm:inline-flex px-3.5 py-1.5 border-2 border-slate-900 text-slate-900 text-[11px] uppercase tracking-wider font-semibold hover:bg-slate-900 hover:text-white transition-colors"
+              >
+                Book
+              </a>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-700 hover:text-slate-900 rounded-md"
+                className="p-2 text-slate-700 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
                 aria-label="Toggle menu"
+                aria-expanded={mobileMenuOpen}
               >
                 {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
               </button>
             </div>
           </div>
 
-          {/* Mobile Navigation Dropdown */}
+          {/* Mobile Navigation Dropdown / Drawer (Contained with viewport boundary protection) */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-slate-200 bg-white px-5 py-4 shadow-xl transition-all">
+            <div className="xl:hidden border-t border-slate-200 bg-white/98 backdrop-blur-md px-5 py-5 shadow-2xl transition-all max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain animate-in slide-in-from-top-2 duration-200">
               <nav className="flex flex-col gap-3 text-[13px] tracking-[0.22em] uppercase text-slate-700 font-medium">
-                <a href="#" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-slate-100">
+                <a href="#" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-100 hover:text-teal-700 transition-colors">
                   Home
                 </a>
-                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-slate-100">
+                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-100 hover:text-teal-700 transition-colors">
                   About Us
                 </a>
 
-                <div className="py-2 border-b border-slate-100">
+                <div className="py-2.5 border-b border-slate-100">
                   <button
                     type="button"
                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="flex items-center justify-between w-full"
+                    className="flex items-center justify-between w-full text-left"
+                    aria-expanded={mobileServicesOpen}
                   >
                     <span>Services</span>
-                    <ChevronDown className={`size-4 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`size-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
                   </button>
                   {mobileServicesOpen && (
-                    <div className="pl-3 mt-2 border-l border-teal-200 flex flex-col gap-2 text-[12px] tracking-[0.2em]">
-                      <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-1 text-slate-600">
+                    <div className="pl-3 mt-2.5 border-l-2 border-teal-500/40 flex flex-col gap-2.5 text-[12px] tracking-[0.2em] animate-in fade-in duration-150">
+                      <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-1 text-slate-600 hover:text-teal-700 transition-colors">
                         Dental Services
                       </a>
-                      <a href="#technology" onClick={() => setMobileMenuOpen(false)} className="py-1 text-slate-600">
+                      <a href="#technology" onClick={() => setMobileMenuOpen(false)} className="py-1 text-slate-600 hover:text-teal-700 transition-colors">
                         Sterilization
                       </a>
-                      <a href="#technology" onClick={() => setMobileMenuOpen(false)} className="py-1 text-slate-600">
+                      <a href="#technology" onClick={() => setMobileMenuOpen(false)} className="py-1 text-slate-600 hover:text-teal-700 transition-colors">
                         Aura Imaging Centre
                       </a>
                     </div>
                   )}
                 </div>
 
-                <a href="#technology" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-slate-100">
+                <a href="#technology" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-100 hover:text-teal-700 transition-colors">
                   Digital Dentistry
                 </a>
-                <a href="#compare" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-slate-100">
+                <a href="#compare" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-100 hover:text-teal-700 transition-colors">
                   Gallery
                 </a>
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2">
+                <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-100 hover:text-teal-700 transition-colors">
+                  Reviews
+                </a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-teal-700 transition-colors">
                   Contact Us
                 </a>
               </nav>
 
-              <div className="mt-4 pt-3 border-t border-slate-200 flex flex-col gap-2">
+              <div className="mt-5 pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-3">
                 <a
                   href="#appointment"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center py-3 border-2 border-slate-900 text-slate-900 text-xs uppercase tracking-wider font-semibold hover:bg-slate-900 hover:text-white"
+                  className="w-full text-center py-3 border-2 border-slate-900 text-slate-900 text-xs uppercase tracking-wider font-semibold hover:bg-slate-900 hover:text-white transition-colors"
                 >
                   Book Appointment
                 </a>
@@ -237,9 +259,9 @@ export default function DentalClinicPage() {
                   href={CLINIC_CONFIG.contact.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center py-3 bg-[#25D366] text-white text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2"
+                  className="w-full text-center py-3 bg-[#25D366] text-white text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 hover:bg-[#20bd5a] transition-colors"
                 >
-                  <MessageCircle className="size-4" />
+                  <MessageCircle className="size-4 fill-white" />
                   WhatsApp
                 </a>
               </div>
@@ -269,7 +291,7 @@ export default function DentalClinicPage() {
                 Transform Your Smile in Just One Visit
               </p>
 
-              <h1 className="mt-4 font-serif uppercase tracking-wide text-5xl md:text-6xl lg:text-7xl leading-[1.05]">
+              <h1 className="mt-4 font-serif uppercase tracking-wide text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]">
                 A Brighter Smile <br /> Awaits
               </h1>
 
@@ -521,7 +543,7 @@ export default function DentalClinicPage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-[16/7] w-full rounded-2xl overflow-hidden shadow-xl border border-slate-200 select-none bg-slate-900">
+            <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[16/7] w-full rounded-2xl overflow-hidden shadow-xl border border-slate-200 select-none bg-slate-900">
               {/* After Image */}
               <div className="absolute inset-0">
                 <img
@@ -570,7 +592,7 @@ export default function DentalClinicPage() {
               />
             </div>
 
-            <div className="mt-4 flex justify-between items-center text-xs text-[#666]">
+            <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-center gap-2 text-xs text-[#666]">
               <span>← Slide to Reveal After</span>
               <span className="font-semibold text-teal-700">Digital CEREC Single-Visit Smile Design</span>
               <span>Slide to Reveal Before →</span>
@@ -685,21 +707,21 @@ export default function DentalClinicPage() {
 
           <div className="relative max-w-4xl mx-auto">
             {/* Arrows */}
-            <div className="absolute top-1/2 -left-4 md:-left-12 transform -translate-y-1/2 z-10">
+            <div className="absolute top-1/2 left-1 sm:-left-4 md:-left-12 transform -translate-y-1/2 z-10">
               <button
                 type="button"
                 onClick={prevTestimonial}
-                className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-slate-700 hover:bg-teal-600 hover:text-white transition duration-200"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-slate-700 hover:bg-teal-600 hover:text-white transition duration-200"
                 aria-label="Previous testimonial"
               >
                 ←
               </button>
             </div>
-            <div className="absolute top-1/2 -right-4 md:-right-12 transform -translate-y-1/2 z-10">
+            <div className="absolute top-1/2 right-1 sm:-right-4 md:-right-12 transform -translate-y-1/2 z-10">
               <button
                 type="button"
                 onClick={nextTestimonial}
-                className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-slate-700 hover:bg-teal-600 hover:text-white transition duration-200"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-slate-700 hover:bg-teal-600 hover:text-white transition duration-200"
                 aria-label="Next testimonial"
               >
                 →
@@ -1054,35 +1076,37 @@ export default function DentalClinicPage() {
             </div>
           </div>
 
-          <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/60 gap-4">
-            <p>© 2026 Aura Dental. All rights reserved.</p>
+          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 text-xs text-white/60">
+            {/* Copyright Notice */}
+            <p className="order-2 sm:order-1 text-center sm:text-left text-white/50 tracking-wider">
+              © 2026 Aura Dental. All rights reserved.
+            </p>
             
-            {/* Developer Credit Attribution */}
+            {/* Salah Developer Credit Attribution */}
             <a
               href="https://salah-portfolio-pink.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-teal-400/40 transition-all duration-300 text-white/70 hover:text-white"
+              className="order-1 sm:order-2 group inline-flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-x-2.5 gap-y-1.5 px-4 py-2.5 sm:py-1.5 rounded-2xl sm:rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-teal-400/40 transition-all duration-300 text-white/70 hover:text-white max-w-full text-center"
               aria-label="Salah - Software Developer & Creative Technologist"
             >
-              <img
-                src="/s-symbol.webp"
-                alt=""
-                width={14}
-                height={17}
-                className="h-4 w-auto object-contain transition-transform duration-300 group-hover:scale-110 shrink-0 filter drop-shadow-[0_1px_4px_rgba(20,184,166,0.25)]"
-                loading="lazy"
-                decoding="async"
-              />
-              <span className="font-semibold tracking-[0.16em] uppercase text-teal-300 group-hover:text-teal-200 transition-colors text-[11px]">
-                SALAH
+              <span className="inline-flex items-center gap-2 shrink-0">
+                <img
+                  src="/s-symbol.webp"
+                  alt=""
+                  width={15}
+                  height={18}
+                  className="h-4 w-auto object-contain transition-transform duration-300 group-hover:scale-110 shrink-0 filter drop-shadow-[0_1px_4px_rgba(20,184,166,0.3)]"
+                  loading="eager"
+                  decoding="async"
+                />
+                <span className="font-semibold tracking-[0.16em] uppercase text-teal-300 group-hover:text-teal-200 transition-colors text-[11px]">
+                  SALAH
+                </span>
               </span>
-              <span className="text-white/30" aria-hidden="true">·</span>
-              <span className="text-[10px] tracking-[0.14em] uppercase text-white/60 group-hover:text-white/90 transition-colors hidden sm:inline">
-                SOFTWARE DEVELOPER · CREATIVE TECHNOLOGIST
-              </span>
-              <span className="text-[10px] tracking-[0.14em] uppercase text-white/60 group-hover:text-white/90 transition-colors sm:hidden">
-                DEV &amp; CREATIVE
+              <span className="hidden sm:inline text-white/30" aria-hidden="true">·</span>
+              <span className="text-[10px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.14em] uppercase text-white/60 group-hover:text-white/90 transition-colors text-center whitespace-normal sm:whitespace-nowrap">
+                SOFTWARE DEVELOPER <span className="text-white/30" aria-hidden="true">·</span> CREATIVE TECHNOLOGIST
               </span>
             </a>
           </div>
