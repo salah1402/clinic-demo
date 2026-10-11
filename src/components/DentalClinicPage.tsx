@@ -1056,7 +1056,35 @@ export default function DentalClinicPage() {
 
           <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/60 gap-4">
             <p>© 2026 Aura Dental. All rights reserved.</p>
-            <p>Designed for Portfolio Showcase</p>
+            
+            {/* Developer Credit Attribution */}
+            <a
+              href="https://salah-portfolio-pink.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-teal-400/40 transition-all duration-300 text-white/70 hover:text-white"
+              aria-label="Salah - Software Developer & Creative Technologist"
+            >
+              <img
+                src="/s-symbol.webp"
+                alt=""
+                width={14}
+                height={17}
+                className="h-4 w-auto object-contain transition-transform duration-300 group-hover:scale-110 shrink-0 filter drop-shadow-[0_1px_4px_rgba(20,184,166,0.25)]"
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="font-semibold tracking-[0.16em] uppercase text-teal-300 group-hover:text-teal-200 transition-colors text-[11px]">
+                SALAH
+              </span>
+              <span className="text-white/30" aria-hidden="true">·</span>
+              <span className="text-[10px] tracking-[0.14em] uppercase text-white/60 group-hover:text-white/90 transition-colors hidden sm:inline">
+                SOFTWARE DEVELOPER · CREATIVE TECHNOLOGIST
+              </span>
+              <span className="text-[10px] tracking-[0.14em] uppercase text-white/60 group-hover:text-white/90 transition-colors sm:hidden">
+                DEV &amp; CREATIVE
+              </span>
+            </a>
           </div>
         </div>
       </footer>
